@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5777cb7bdb2744bc7935fc28a0c9e2fa
-timeCreated: 1507587644
+guid: e67e9c5754682924db5d5a8f32c63366
+timeCreated: 1508087935
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,7 +19,7 @@ TextureImporter:
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -38,12 +38,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapU: 1
     wrapV: 1
@@ -68,7 +68,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -76,15 +76,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -92,7 +84,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -100,7 +92,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -121,7 +113,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -17, y: 40}
+        - {x: -35, y: 18}
+        - {x: -43, y: -6}
+        - {x: -43, y: -24}
+        - {x: -16, y: -41}
+        - {x: 24, y: -41}
+        - {x: 41, y: -28}
+        - {x: 41, y: 6}
+        - {x: 18, y: 40}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -135,7 +136,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -16, y: 37}
+        - {x: -36, y: 16}
+        - {x: -43, y: 1}
+        - {x: -43, y: -27}
+        - {x: -24, y: -41}
+        - {x: 31, y: -41}
+        - {x: 41, y: -30}
+        - {x: 41, y: 2}
+        - {x: 18, y: 37}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -149,7 +159,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -35, y: -40}
+        - {x: 23, y: -40}
+        - {x: 41, y: -33}
+        - {x: 41, y: 26}
+        - {x: 34, y: 40}
+        - {x: -18, y: 40}
+        - {x: -43, y: 25}
+        - {x: -43, y: -32}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -163,7 +181,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -17, y: 40}
+        - {x: -35, y: 18}
+        - {x: -43, y: -6}
+        - {x: -43, y: -24}
+        - {x: -16, y: -41}
+        - {x: 24, y: -41}
+        - {x: 41, y: -28}
+        - {x: 41, y: 6}
+        - {x: 18, y: 40}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -177,7 +204,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -5, y: 50}
+        - {x: -8, y: 49}
+        - {x: -42, y: 36}
+        - {x: -50, y: 18}
+        - {x: -50, y: -5}
+        - {x: -44, y: -6}
+        - {x: -36, y: -6}
+        - {x: -30, y: -33}
+        - {x: 28, y: -33}
+        - {x: 44, y: -17}
+        - {x: 44, y: 23}
+        - {x: 28, y: 50}
+      - - {x: 14, y: -1}
+        - {x: 16, y: 1}
+        - {x: 19, y: -2}
+        - {x: 16, y: -1}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -191,7 +234,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -26, y: 35}
+        - {x: -26, y: -39}
+        - {x: 9, y: -39}
+        - {x: 39, y: -25}
+        - {x: 39, y: 12}
+        - {x: 27, y: 35}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -205,7 +254,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -22, y: 40}
+        - {x: -40, y: 7}
+        - {x: -40, y: -27}
+        - {x: -37, y: -33}
+        - {x: 36, y: -33}
+        - {x: 41, y: -32}
+        - {x: 41, y: 21}
+        - {x: 12, y: 44}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -219,7 +277,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -7, y: 37}
+        - {x: -9, y: 36}
+        - {x: -24, y: 17}
+        - {x: -24, y: -32}
+        - {x: -22, y: -40}
+        - {x: 27, y: -40}
+        - {x: 35, y: -32}
+        - {x: 35, y: 18}
+        - {x: 26, y: 37}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -233,7 +300,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 31, y: 47}
+        - {x: -28, y: 47}
+        - {x: -50, y: 21}
+        - {x: -50, y: -22}
+        - {x: -24, y: -36}
+        - {x: 1, y: -36}
+        - {x: 21, y: -30}
+        - {x: 44, y: -16}
+        - {x: 44, y: 21}
+      - - {x: 14, y: -4}
+        - {x: 16, y: -2}
+        - {x: 19, y: -5}
+        - {x: 16, y: -4}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -247,7 +327,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -20, y: 49}
+        - {x: -28, y: 42}
+        - {x: -36, y: -2}
+        - {x: -36, y: -15}
+        - {x: -8, y: -46}
+        - {x: -5, y: -46}
+        - {x: 1, y: -49}
+        - {x: 8, y: -49}
+        - {x: 17, y: -44}
+        - {x: 39, y: -28}
+        - {x: 39, y: 8}
+        - {x: 17, y: 49}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -261,7 +353,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -24, y: 42}
+        - {x: -35, y: 27}
+        - {x: -41, y: 8}
+        - {x: -41, y: -20}
+        - {x: -6, y: -40}
+        - {x: 38, y: -40}
+        - {x: 38, y: 29}
+        - {x: 8, y: 42}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -275,7 +375,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -38, y: 33}
+        - {x: -38, y: -32}
+        - {x: -15, y: -40}
+        - {x: 28, y: -40}
+        - {x: 41, y: -24}
+        - {x: 41, y: 18}
+        - {x: 35, y: 33}
       physicsShape: []
       tessellationDetail: 0
     outline: []
