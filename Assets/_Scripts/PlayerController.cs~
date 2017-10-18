@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour{
 
@@ -14,15 +15,21 @@ public class PlayerController : MonoBehaviour{
 	public Transform groundCheck;
 	public float jumpHeight;
 
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D myRigidbody;
 	private Animator myAnim;
 	private Vector3 theScale;
 	private bool facingRight;
 
+	// Projectile Firing
+	public Transform barrelTip;
+	public GameObject bullet;
+	public float fireRate;
+	private float nextFire;
+
 	// Use this for initialization
 	void Start (){
 
-		rigidbody = GetComponent<Rigidbody2D> ();
+		myRigidbody = GetComponent<Rigidbody2D> ();
 		myAnim = GetComponent<Animator> ();
 		facingRight = true;
 
@@ -34,8 +41,26 @@ public class PlayerController : MonoBehaviour{
 		if (grounded && Input.GetAxis ("Jump") > 0){
 			grounded = false;
 			myAnim.SetBool ("isGrounded", grounded);
-			rigidbody.AddForce (new Vector2 (0, jumpHeight));
+			myRigidbody.AddForce (new Vector2 (0, jumpHeight));
 
+		}
+
+		if (Input.GetAxisRaw ("Fire1") > 0){
+			fireRocket ();
+		}
+	}
+
+	void fireRocket (){
+		// check if we can fire. 
+		if (Time.time > nextFire){
+			nextFire = Time.time + fireRate;
+
+			// Check direction player is facing to fire projectile
+			if (facingRight){
+				Instantiate (bullet, barrelTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			} else{
+				Instantiate (bullet, barrelTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+			}
 		}
 	}
 
@@ -46,15 +71,15 @@ public class PlayerController : MonoBehaviour{
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 		myAnim.SetBool ("isGrounded", grounded);
 
-		myAnim.SetFloat ("verticalSpeed", rigidbody.velocity.y);
+		myAnim.SetFloat ("verticalSpeed", myRigidbody.velocity.y);
 
 
 		float move = Input.GetAxis ("Horizontal");
 		myAnim.SetFloat ("speed", Mathf.Abs (move));
 
-		rigidbody.velocity = new Vector2 (
+		myRigidbody.velocity = new Vector2 (
 			move * maxSpeed,
-			rigidbody.velocity.y);
+			myRigidbody.velocity.y);
 
 		if (move > 0 && !facingRight){
 			flip ();
