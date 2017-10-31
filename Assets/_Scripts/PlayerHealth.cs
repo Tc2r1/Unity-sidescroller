@@ -8,10 +8,10 @@ public class PlayerHealth : MonoBehaviour{
 
 	public float fullHealth;
 	public GameObject deathFX;
+	public AudioClip playerDeathSound;
 	public AudioClip playerHurt;
 	private AudioSource playerAS;
 	private float currentHealth;
-	PlayerController playerController;
 
 
 	// HUD VARIABLES
@@ -25,7 +25,6 @@ public class PlayerHealth : MonoBehaviour{
 	void Start (){
 
 		currentHealth = fullHealth;
-		playerController = gameObject.GetComponent <PlayerController> ();
 		playerAS = GetComponent<AudioSource> ();
 
 
@@ -65,8 +64,26 @@ public class PlayerHealth : MonoBehaviour{
 		}
 	}
 
+	public void addHealth (float healthAmount){
+		
+		currentHealth += healthAmount;
+
+		if (currentHealth > fullHealth){
+			currentHealth = fullHealth;
+		}
+
+		// Animate Health Slider
+		for (int i = 0; i < healthAmount; i++){
+			healthSlider.value += 1;
+		}
+
+		// TODO: health addition on slider animation.
+
+	}
+
 	public void makeDead (){
 		Instantiate (deathFX, transform.position, transform.rotation);
+		AudioSource.PlayClipAtPoint (playerDeathSound, transform.position);
 		Destroy (gameObject);
 	}
 

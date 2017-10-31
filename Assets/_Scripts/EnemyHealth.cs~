@@ -12,6 +12,9 @@ public class EnemyHealth : MonoBehaviour{
 	public Image healthBarFill;
 	public Color maxHealthColor = Color.green;
 	public Color minHealthColor = Color.red;
+	public bool drops;
+	public GameObject theDrop;
+	public AudioClip deathKnell;
 
 
 	void Awake (){
@@ -50,5 +53,9 @@ public class EnemyHealth : MonoBehaviour{
 	void makeDead (){
 		Destroy (gameObject);
 		Instantiate (enemyDeathFX, transform.position, transform.rotation);
+		AudioSource.PlayClipAtPoint (deathKnell, transform.position);
+		if (drops){
+			Instantiate (theDrop, transform.position, transform.rotation);
+		}
 	}
 }

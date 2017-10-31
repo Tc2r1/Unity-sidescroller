@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour{
 	// Update is called once per frame
 	void Update (){
 
-		if (grounded && Input.GetAxis ("Jump") > 0){
+		if (grounded && Input.GetButtonDown ("Jump") && myRigidbody.velocity.y == 0){
 			grounded = false;
 			myAnim.SetBool ("isGrounded", grounded);
 			myRigidbody.AddForce (new Vector2 (0, jumpHeight));
