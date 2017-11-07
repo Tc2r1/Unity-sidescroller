@@ -7,9 +7,14 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour{
 
 	public float fullHealth;
+
+	public AudioClip playerHurt;
+
 	public GameObject deathFX;
 	public AudioClip playerDeathSound;
-	public AudioClip playerHurt;
+	public restartGame gameManager;
+
+
 	private AudioSource playerAS;
 	private float currentHealth;
 
@@ -17,9 +22,12 @@ public class PlayerHealth : MonoBehaviour{
 	// HUD VARIABLES
 	public Slider healthSlider;
 	public Image damageScreen;
+	public Text gameOverScreen;
+	public Text winGameScreen;
 	private bool damaged = false;
 	private Color damagedColor = new Color (0.1f, 0.1f, 0.1f, .5f);
 	private float damageScrenFade = 5f;
+
 
 	// Use this for initialization
 	void Start (){
@@ -84,7 +92,22 @@ public class PlayerHealth : MonoBehaviour{
 	public void makeDead (){
 		Instantiate (deathFX, transform.position, transform.rotation);
 		AudioSource.PlayClipAtPoint (playerDeathSound, transform.position);
+		damageScreen.color = damagedColor;		
+
+
+		Animator gameOverAnimator = gameOverScreen.GetComponent<Animator> ();
+		gameOverAnimator.SetTrigger ("gameOver");
+		gameManager.restartTheGame ();
 		Destroy (gameObject);
+
+	}
+
+	public void winGame (){
+		Destroy (gameObject);
+		gameManager.restartTheGame ();
+
+		Animator winAnimator = winGameScreen.GetComponent<Animator> ();
+		winAnimator.SetTrigger ("winGame");
 	}
 
 

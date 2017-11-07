@@ -14,7 +14,9 @@ public class EnemyHealth : MonoBehaviour{
 	public Color minHealthColor = Color.red;
 	public bool drops;
 	public GameObject theDrop;
-	public AudioClip deathKnell;
+	public AudioClip hurtSFX;
+	public AudioClip deathSFX;
+
 
 
 	void Awake (){
@@ -42,6 +44,10 @@ public class EnemyHealth : MonoBehaviour{
 		if (!healthSlider.gameObject.activeSelf){
 			healthSlider.gameObject.SetActive (true);
 		}
+
+		if (hurtSFX != null){
+			AudioSource.PlayClipAtPoint (hurtSFX, transform.position);
+		}
 		healthSlider.value = currentHealth;
 		healthBarFill.color = Color.Lerp (minHealthColor, maxHealthColor, currentHealth / maxHealth);
 
@@ -53,7 +59,9 @@ public class EnemyHealth : MonoBehaviour{
 	void makeDead (){
 		Destroy (gameObject);
 		Instantiate (enemyDeathFX, transform.position, transform.rotation);
-		AudioSource.PlayClipAtPoint (deathKnell, transform.position);
+		if (deathSFX != null){
+			AudioSource.PlayClipAtPoint (deathSFX, transform.position);
+		}
 		if (drops){
 			Instantiate (theDrop, transform.position, transform.rotation);
 		}

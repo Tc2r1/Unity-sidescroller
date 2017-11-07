@@ -14,9 +14,12 @@ public class PlayerController : MonoBehaviour{
 	public LayerMask groundLayer;
 	public Transform groundCheck;
 	public float jumpHeight;
+	public AudioClip jumpSFX;
+
 
 	private Rigidbody2D myRigidbody;
 	private Animator myAnim;
+	private AudioSource myAudioSource;
 	private Vector3 theScale;
 	private bool facingRight;
 
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour{
 
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		myAnim = GetComponent<Animator> ();
+		myAudioSource = GetComponent<AudioSource> ();
 		facingRight = true;
 
 	}
@@ -38,11 +42,17 @@ public class PlayerController : MonoBehaviour{
 	// Update is called once per frame
 	void Update (){
 
-		if (grounded && Input.GetButtonDown ("Jump") && myRigidbody.velocity.y == 0){
-			grounded = false;
-			myAnim.SetBool ("isGrounded", grounded);
-			myRigidbody.AddForce (new Vector2 (0, jumpHeight));
+		if (grounded && Input.GetButtonDown ("Jump")){
+			if (myRigidbody.velocity.y < 1){
+				grounded = false;
+				myAnim.SetBool ("isGrounded", grounded);
+				myRigidbody.AddForce (new Vector2 (0, jumpHeight));
 
+
+				myAudioSource.volume = .7f;
+				myAudioSource.PlayOneShot (jumpSFX);
+
+			}
 		}
 
 		if (Input.GetAxisRaw ("Fire1") > 0){

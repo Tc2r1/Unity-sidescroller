@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2327c927e2707224a9d68e893f041d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveTime: 5
+  aliveTime: 4
 --- !u!114 &114347660005502620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7515df7ae640c45bf90691b0ffccfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  damageRate: 0.05
+  damage: 5
+  damageRate: 0.5
   knockBackForce: 10
 --- !u!212 &212776566413481288
 SpriteRenderer:

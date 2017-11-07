@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 20
+  pickUpSFX: {fileID: 8300000, guid: 89db9d59474c41e49b986c4fc02fc7b6, type: 3}
 --- !u!212 &212804286582696558
 SpriteRenderer:
   m_ObjectHideFlags: 1

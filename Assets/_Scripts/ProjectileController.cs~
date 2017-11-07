@@ -9,16 +9,20 @@ public class ProjectileController : MonoBehaviour{
 	private Rigidbody2D rigBody;
 
 	// Use this for initialization
-	void Awake (){
+	void Start (){
 		rigBody = GetComponent<Rigidbody2D> ();
+
+
+		Debug.Log (transform.rotation.z);
 
 		if (transform.localRotation.z > 0){
 			// Use Impulse force to fire projectile
 			rigBody.AddForce (new Vector2 (-1, .01f) * rocketSpeed, ForceMode2D.Impulse);
-
+		
 		} else{
 			// Use Impulse force to fire projectile
 			rigBody.AddForce (new Vector2 (1, .01f) * rocketSpeed, ForceMode2D.Impulse);
+		
 		}
 	}
 	
